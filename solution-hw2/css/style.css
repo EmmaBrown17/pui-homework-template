@@ -222,6 +222,11 @@ a{
   gap: 20px;
 }
 
+.cart-img{
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 
 .cart-price{
   justify-content: space-evenly;
@@ -245,10 +250,5 @@ a{
   display: flex;
   justify-content: flex-end;
   margin: 0 400px;
-}
-
-.cart-remove{
-  text-decoration: underline;
-  font-weight: bold;
 }
 

@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/app.js"></script>
+  </head>
+
   <title>Bun Bun Bake Shop</title>
   
   <body>
@@ -44,7 +48,7 @@
         <div class="dropdowns">
           <label for="glaze">Glazing:</label>
           <br>
-          <select name="glazing" id="glazing">
+          <select name="glazing" id="glazing" onchange="glazingChange(this)">
             <option value="keep-original">Keep original</option>
             <option value="sugar-milk">Sugar milk</option>
             <option value="vanilla-milk">Vanilla milk</option>
@@ -65,7 +69,7 @@
         </div>
 
         <div class="bottom">
-          <p>$2.49</p> 
+          <p id="price-info">$2.49</p> 
           <a href="cart.html">
             <button>Add to Cart</button>
           </a>

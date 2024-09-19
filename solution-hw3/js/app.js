@@ -1,21 +1,3 @@
-/* for product description page:
-
-from glazing id, 
-
-if keep original add 0
-if sugar milk add 0
-if vanilla milk add 0.50
-if double chocolate add 1.50
-to total 
-
-from pack size id,
-
-if one * 1
-if 3 * 3
-if 6 * 5
-if 12 * 10
-*/
-
 let basePrice = 2.49;
 
 let glazePrice = [
@@ -70,9 +52,6 @@ function glazingChange(element){
     let glazeID = document.getElementById('glazing');
     let chosenInput = glazeID.options[glazeID.selectedIndex].text;
     console.log("You chose " + chosenInput);
-
-
-
 
     // get value of glaze option
     const priceChange = element.value;

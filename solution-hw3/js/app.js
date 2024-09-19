@@ -18,7 +18,7 @@ if 12 * 10
 
 let basePrice = 2.49;
 
-let allGlazing = [
+let glazePrice = [
     {
         glazing: 'keep-original',
         price: (basePrice + 0),
@@ -37,7 +37,7 @@ let allGlazing = [
     },
 ];
 
-let allPackSize = [
+let packPrice = [
     {
         packsize: 'keep-original',
         price: (basePrice * 1),
@@ -68,8 +68,10 @@ function glazingChange(element){
     console.log("hi");
 
     let glazeID = document.getElementById('glazing');
-    let value = glazeID.options[glazeID.selectedIndex].text;
-    console.log("You chose " + value);
+    let chosenInput = glazeID.options[glazeID.selectedIndex].text;
+    console.log("You chose " + chosenInput);
+
+
 
 
     // get value of glaze option

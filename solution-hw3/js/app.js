@@ -3,58 +3,88 @@ let basePrice = 2.49;
 let glazePrice = [
     {
         glazing: 'keep-original',
-        price: (basePrice + 0),
+        glazeAdd: 0,
     },
     {
         glazing: 'sugar-milk',
-        price: (basePrice + 0),
+        glazeAdd: 0,
     },
     {
         glazing: 'vanilla-milk',
-        price: (basePrice + 0.50),
+        glazeAdd: 0.50,
     },
     {
         glazing: 'double-chocolate',
-        price: (basePrice + 1.50),
+        glazeAdd: 1.50,
     },
 ];
 
 let packPrice = [
     {
-        packsize: 'keep-original',
-        price: (basePrice * 1),
+        packsize: 'one',
+        packMulti: 1,
     },
     {
-        packsize: 'sugar-milk',
-        price: (basePrice * 3),
+        packsize: 'three',
+        packMulti: 3,
     },
     {
-        packsize: 'vanilla-milk',
-        price: (basePrice * 5),
+        packsize: 'six',
+        packMulti: 5,
     },
     {
-        packsize: 'double-chocolate',
-        price: (basePrice * 10),
+        packsize: 'twelve',
+        packMulti: 10,
     },
 ]
 
-/*
-function displayPrice(glaze) {
-    let glazeElement = document.querySelector('#price-info');
+let glazeInput = document.getElementById('glazing');
+let packInput = document.getElementById('pack-size');
 
-    glazeElement.innerText = glaze.price;
+for (let i = 0; i < glazePrice.length; i++){
+    let addedOption = document.createElement('option');
+    addedOption.text = glazePrice[i].glazing;
+    addedOption.value = glazePrice[i].glazing;
+    console.log(addedOption);
+    addedOption.classList.add('glazing-options'); // Replace with your actual class name
+    glazeInput.add(addedOption);
 }
-    */
+
+console.log(addedOption);
+console.log("You chose " + glazeInput.value);
+console.log("Which means the price change is ");
 
 function glazingChange(element){
-    console.log("hi");
 
-    let glazeID = document.getElementById('glazing');
-    let chosenInput = glazeID.options[glazeID.selectedIndex].text;
-    console.log("You chose " + chosenInput);
+    //get value of glaze option
+    // let glazeInput = document.getElementById('glazing');
+    // let packInput = document.getElementById('pack-size');
 
-    // get value of glaze option
-    const priceChange = element.value;
+    // for (let i = 0; i < glazePrice.length; i++){
+    //     let addedOption = document.createElement('option');
+    //     addedOption.text = glazePrice[i].glazing;
+    //     addedOption.value = glazePrice[i].glazing;
+    //     glazeInput.add(addedOption);
+    // }
+
+
+    // for (let i = 0; i < glazePrice.length; i++){
+    //     let addedOption = document.createElement('option');
+    //     addedOption.text = glazePrice[i].glazing;
+    //     addedOption.value = glazePrice[i].glazing;
+    //     console.log(addedOption);
+    //     addedOption.classList.add('glazing-options'); // Replace with your actual class name
+    //     glazeInput.add(addedOption);
+    // }
+    
+    
+
+    
+
+    // console.log(element.value);
+
+
+    //const priceChange = element.value;
     //update the price
 }
 

@@ -2,19 +2,19 @@ let basePrice = 2.49;
 
 let glazePrice = [
     {
-        glazing: 'keep-original',
+        glazing: 'Keep Original',
         glazeAdd: 0,
     },
     {
-        glazing: 'sugar-milk',
+        glazing: 'Sugar Milk',
         glazeAdd: 0,
     },
     {
-        glazing: 'vanilla-milk',
+        glazing: 'Vanilla Milk',
         glazeAdd: 0.50,
     },
     {
-        glazing: 'double-chocolate',
+        glazing: 'Double Chocolate',
         glazeAdd: 1.50,
     },
 ];
@@ -46,45 +46,17 @@ for (let i = 0; i < glazePrice.length; i++){
     addedOption.text = glazePrice[i].glazing;
     addedOption.value = glazePrice[i].glazing;
     console.log(addedOption);
-    addedOption.classList.add('glazing-options'); // Replace with your actual class name
+    addedOption.classList.add('glazing-options');
     glazeInput.add(addedOption);
 }
 
-console.log(addedOption);
-console.log("You chose " + glazeInput.value);
-console.log("Which means the price change is ");
+function priceChange(element){
+    //update the price when the certain glazing change 
+    //update the price when the certain pack change
 
-function glazingChange(element){
-
-    //get value of glaze option
-    // let glazeInput = document.getElementById('glazing');
-    // let packInput = document.getElementById('pack-size');
-
-    // for (let i = 0; i < glazePrice.length; i++){
-    //     let addedOption = document.createElement('option');
-    //     addedOption.text = glazePrice[i].glazing;
-    //     addedOption.value = glazePrice[i].glazing;
-    //     glazeInput.add(addedOption);
-    // }
-
-
-    // for (let i = 0; i < glazePrice.length; i++){
-    //     let addedOption = document.createElement('option');
-    //     addedOption.text = glazePrice[i].glazing;
-    //     addedOption.value = glazePrice[i].glazing;
-    //     console.log(addedOption);
-    //     addedOption.classList.add('glazing-options'); // Replace with your actual class name
-    //     glazeInput.add(addedOption);
-    // }
-    
+    //update total price ?
     
 
-    
 
-    // console.log(element.value);
-
-
-    //const priceChange = element.value;
-    //update the price
 }
 

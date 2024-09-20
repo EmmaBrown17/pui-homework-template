@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <script defer src="js/app.js"></script> -->
+    <script defer src="js/app.js"></script>
   </head>
 
   <title>Bun Bun Bake Shop</title>
@@ -48,7 +48,7 @@
         <div class="dropdowns">
           <label for="glaze">Glazing:</label>
           <br>
-          <select name="glazing" id="glazing" onchange="glazingChange(this)">
+          <select name="glazing" id="glazing" onchange="priceChange()">
           </select>
     
           <br>
@@ -56,7 +56,7 @@
     
           <label for="pack">Pack size:</label>
           <br>
-          <select name="pack-size" id="pack-size">
+          <select name="pack-size" id="pack-size" onchange="priceChange()">
             <option value="one">1</option>
             <option value="three">3</option>
             <option value="six">6</option>
@@ -73,6 +73,5 @@
       </div>
 
     </div>
-    <script defer src="js/app.js"></script>
   </body>
 </html>

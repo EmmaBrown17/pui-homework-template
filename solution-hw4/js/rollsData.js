@@ -24,5 +24,3 @@ const rolls = {
         "imageFile": "strawberry-cinnamon-roll.jpg"
     }    
 };
-
-document.getElementById("which-image").textContent = rolls[2]; 

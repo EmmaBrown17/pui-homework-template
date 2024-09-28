@@ -38,6 +38,8 @@ let packPrice = [
     },
 ]
 
+let cart = [];
+
 document.addEventListener("DOMContentLoaded", () => {
     const queryString = window.location.search;
     const params = new URLSearchParams(queryString);
@@ -96,3 +98,42 @@ function priceChange() {
 
     document.getElementById("price-info").textContent = `$${((basePrice + currentGlazeAdd) * currentPackAdd).toFixed(2)}`;
 }
+
+class Roll {
+    constructor(rollType, rollGlazing, packSize, basePrice) {
+        this.type = rollType;
+        this.glazing = rollGlazing;
+        this.size = packSize;
+        this.basePrice = basePrice;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const addToCart = document.getElementById("add-to-cart");
+    const cart = [];
+
+    if (addToCart) {
+        addToCart.addEventListener("click", (event) => {
+            event.preventDefault();
+    
+            const rollType = document.getElementById("banner-title").textContent.replace(" Cinnamon Roll", "");
+            const rollGlazing = document.getElementById("glazing").value;
+            const packSize = document.getElementById("pack-size").value;
+    
+            if (!rolls[rollType]) {
+                console.error("Invalid roll type:", rollType);
+                return;
+            }
+    
+            const basePrice = rolls[rollType].basePrice;
+    
+            const selectedRoll = new Roll(rollType, rollGlazing, packSize, basePrice);
+    
+            localStorage.setItem('cart', JSON.stringify([selectedRoll]));
+    
+            window.location.href = "cart.html";
+        });
+    } else {
+        console.log("Element not found");
+    }
+});

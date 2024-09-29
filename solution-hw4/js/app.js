@@ -1,5 +1,3 @@
-//let basePrice = rolls[rollType].basePrice;
-
 let glazePrice = [
     {
         glazing: 'Keep Original',
@@ -38,7 +36,7 @@ let packPrice = [
     },
 ]
 
-let cart = [];
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 document.addEventListener("DOMContentLoaded", () => {
     const queryString = window.location.search;
@@ -110,7 +108,6 @@ class Roll {
 
 document.addEventListener("DOMContentLoaded", () => {
     const addToCart = document.getElementById("add-to-cart");
-    const cart = [];
 
     if (addToCart) {
         addToCart.addEventListener("click", (event) => {
@@ -128,12 +125,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const basePrice = rolls[rollType].basePrice;
     
             const selectedRoll = new Roll(rollType, rollGlazing, packSize, basePrice);
+
+            cart.push(selectedRoll);
     
-            localStorage.setItem('cart', JSON.stringify([selectedRoll]));
+            localStorage.setItem('cart', JSON.stringify(cart));
     
             window.location.href = "cart.html";
         });
-    } else {
-        console.log("Element not found");
-    }
+    } 
 });
+
+console.log(cart);

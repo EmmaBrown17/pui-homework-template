@@ -36,8 +36,6 @@ let packPrice = [
     },
 ]
 
-let cart = JSON.parse(localStorage.getItem('cart')) || [];
-
 document.addEventListener("DOMContentLoaded", () => {
     const queryString = window.location.search;
     const params = new URLSearchParams(queryString);
@@ -61,7 +59,7 @@ function updateImageAndPrice(roll) {
     rollName.textContent = `${roll} Cinnamon Roll`;
 }
 
-function populateDropdowns(rollType){
+function populateDropdowns(rollType) {
     const basePrice = rolls[rollType].basePrice;
 
     const glazeInput = document.getElementById('glazing');
@@ -125,14 +123,20 @@ const rollTwo = new Roll("Walnut", "Vanilla Milk", 12, rollTwoPrice);
 const rollThree = new Roll("Raisin", "Sugar Milk", 3, rollThreePrice);
 const rollFour = new Roll("Apple", "Original", 3, rollFourPrice);
 
-document.addEventListener("DOMContentLoaded", () => {
-    updateCart();
-});
+let cart = [rollOne, rollTwo, rollThree, rollFour];
 
-function updateCart (){
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+function loadCart(){
+    updateCart();
+}
+
+function updateCart() {
     const cartContainer = document.getElementById("cart-container");
     const totalPriceElement = document.getElementById("total-price");
+
+    if (!cart || cart.length === 0){
+        totalPriceElement.textContent = "$0.00";
+        return;
+    }
 
     cartContainer.innerHTML = '';
 
@@ -162,35 +166,24 @@ function updateCart (){
 
     totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
 }
-function removeItemFromCart(index){
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function removeItemFromCart(index) {
     cart.splice(index, 1);
-    localStorage.setItem('cart', JSON.stringify(cart));
     updateCart();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    updateCart();
+    loadCart();
 })
 
-//     const addToCart = document.getElementById("add-to-cart");
+const addToCart = document.getElementById("add-to-cart");
 
-//     if (addToCart) {
-//         addToCart.addEventListener("click", (event) => {
-//             event.preventDefault();
-    
-//             if (!rolls[rollType]) {
-//                 console.error("Invalid roll type:", rollType);
-//                 return;
-//             }
+if (addToCart) {
+    addToCart.addEventListener("click", (event) => {
+        event.preventDefault();
 
-//             cart.push(selectedRoll);
-    
-//             //localStorage.setItem('cart', JSON.stringify(cart));
-    
-//             window.location.href = "cart.html";
-//         });
-//     } 
-// });
+        window.location.href = "cart.html";
+    });
+};
 
-//console.log(cart);
+console.log(cart);

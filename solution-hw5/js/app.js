@@ -125,7 +125,54 @@ const rollTwo = new Roll("Walnut", "Vanilla Milk", 12, rollTwoPrice);
 const rollThree = new Roll("Raisin", "Sugar Milk", 3, rollThreePrice);
 const rollFour = new Roll("Apple", "Original", 3, rollFourPrice);
 
-// document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
+    updateCart();
+});
+
+function updateCart (){
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const cartContainer = document.getElementById("cart-container");
+    const totalPriceElement = document.getElementById("total-price");
+
+    cartContainer.innerHTML = '';
+
+    let totalPrice = 0;
+
+    const template = document.getElementById("cart-row-template");
+
+    cart.forEach((roll, index) => {
+        const cartRow = template.content.cloneNode(true);
+
+        const cartImage = cartRow.querySelector(".cart-product");
+        cartImage.src = `../assets/products/${roll.type.toLowerCase().replace(" ", "-")}-cinnamon-roll.jpg`;
+        cartImage.alt = `${roll.type} Cinnamon Roll`;
+
+        cartRow.querySelector(".roll-type").textContent = `${roll.type} Cinnamon Roll`;
+        cartRow.querySelector(".roll-glaze").textContent = `Glazing: ${roll.glazing}`;
+        cartRow.querySelector(".roll-size").textContent = `Pack size: ${roll.size}`;
+        cartRow.querySelector(".price").textContent = `$${parseFloat(roll.rollPrice).toFixed(2)}`;
+
+        const removeButton = cartRow.querySelector(".remove-btn");
+        removeButton.addEventListener("click", () => removeItemFromCart(index));
+
+        cartContainer.appendChild(cartRow);
+
+        totalPrice += parseFloat(roll.rollPrice);
+    });
+
+    totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+}
+function removeItemFromCart(index){
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCart();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    updateCart();
+})
+
 //     const addToCart = document.getElementById("add-to-cart");
 
 //     if (addToCart) {
@@ -146,4 +193,4 @@ const rollFour = new Roll("Apple", "Original", 3, rollFourPrice);
 //     } 
 // });
 
-console.log(cart);
+//console.log(cart);

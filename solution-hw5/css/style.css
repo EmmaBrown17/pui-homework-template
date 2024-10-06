@@ -259,3 +259,7 @@ a{
   gap: 20px;
   margin-left: 120px;
 } 
+
+.remove-btn{
+  cursor: pointer;
+}

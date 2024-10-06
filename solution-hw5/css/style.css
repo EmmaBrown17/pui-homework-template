@@ -96,10 +96,6 @@ h4, h3{
   margin-right: 60px;
 }
 
-/*
-HW 2 additions
-*/
-
 .banner{
   display: flex;
   flex-direction: row;

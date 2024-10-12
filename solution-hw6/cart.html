@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/rollsData.js"></script>
+        <script src="js/app.js" defer></script>
+      </head>
+      
+  <title>Bun Bun Bake Shop</title>
+  
+  <body>
+
+    <div class="banner">
+        <div class="banner-img">
+          <a href="index.html">
+            <img class="logo" alt="logo" src="../assets/logo/logo-01.svg">
+            </a>
+        </div>
+  
+        <div class="nav-box">
+          <div class="nav">
+            <a href="index.html">
+              <h3>Products</h3>
+            </a>
+      
+            <a href="cart.html">
+            <h3 id="page-three">Cart</h3>
+            </a>
+          </div>
+  
+          <div class="banner-title">
+            <h3>Our hand-made cinnamon rolls</h3>
+          </div>
+        </div>
+    </div>
+
+    <div class="container-three">
+        <template id="cart-row-template">
+            <div class="cart-row">
+                <div class="cart-img-text">
+                    <div class="cart-img">
+                        <img class="cart-product" alt="cart product">
+                        <p class="remove-btn">Remove</p>
+                    </div>
+                    <div class="cart-text">
+                        <p class="roll-type"></p>
+                        <p class="roll-glaze"></p>
+                        <p class="roll-size"></p>
+                    </div>
+                    <div class="cart-price">
+                        <p class = "price"></p>
+                    </div>
+                </div>
+    
+            </div>
+        </template>
+        
+        <div id="cart-container"></div>
+
+        <div class="footer">
+            <p>Total</p>
+            <p id = "total-price">$0.00</p>
+        </div>
+
+        <div class="checkout">
+            <button id="add-to-cart">Checkout</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateImageAndPrice(rollType);
         populateDropdowns(rollType);
     }
-    
+
     loadCart();
 })
 
@@ -114,7 +114,7 @@ function updateCart() {
 
     if (!cart || cart.length === 0){
         totalPriceElement.textContent = "$0.00";
-        cartContainer.innerHTML = '<p class="empty-cart">Your cart is empty!</p>';
+        cartContainer.innerHTML = '<p>Your cart is empty!</p>';
         return;
     }
 

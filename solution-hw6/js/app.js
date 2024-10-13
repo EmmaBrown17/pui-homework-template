@@ -38,13 +38,9 @@ let packPrice = [
 
 let cart = [];
 
-function loadCart(){
-    const storedCart = localStorage.getItem("cart");
-    cart = storedCart ? JSON.parse(storedCart) : [];
-    updateCart();
-}
-
 document.addEventListener("DOMContentLoaded", () => {
+    loadCart(); 
+
     const queryString = window.location.search;
     const params = new URLSearchParams(queryString);
     const rollType = params.get('roll');
@@ -53,8 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
         updateImageAndPrice(rollType);
         populateDropdowns(rollType);
     }
-
-    loadCart();
 })
 
 function updateImageAndPrice(roll) {
@@ -112,39 +106,57 @@ function updateCart() {
     const cartContainer = document.getElementById("cart-container");
     const totalPriceElement = document.getElementById("total-price");
 
+    // if (!cartContainer || !totalPriceElement){
+    //     console.error("Cart container or total price not found");
+    //     return;
+    // }
+
     if (!cart || cart.length === 0){
         totalPriceElement.textContent = "$0.00";
         cartContainer.innerHTML = '<p class="empty-cart">Your cart is empty!</p>';
         return;
     }
 
-    cartContainer.innerHTML = '';
+    else {
+        cartContainer.innerHTML = '';
 
-    let totalPrice = 0;
+        let totalPrice = 0;
+    
+        const template = document.getElementById("cart-row-template");
+    
+        cart.forEach((roll, index) => {
+            const cartRow = template.content.cloneNode(true);
+    
+            const cartImage = cartRow.querySelector(".cart-product");
+            cartImage.src = `../assets/products/${roll.type.toLowerCase().replace(" ", "-")}-cinnamon-roll.jpg`;
+            cartImage.alt = `${roll.type} Cinnamon Roll`;
+    
+            cartRow.querySelector(".roll-type").textContent = `${roll.type} Cinnamon Roll`;
+            cartRow.querySelector(".roll-glaze").textContent = `Glazing: ${roll.glazing}`;
+            cartRow.querySelector(".roll-size").textContent = `Pack size: ${roll.size}`;
+            cartRow.querySelector(".price").textContent = `$${parseFloat(roll.rollPrice).toFixed(2)}`;
+    
+            const removeButton = cartRow.querySelector(".remove-btn");
+            removeButton.addEventListener("click", () => removeItemFromCart(index));
+    
+            cartContainer.appendChild(cartRow);
+    
+            totalPrice += parseFloat(roll.rollPrice);
+        });
+    
+        totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+    }
 
-    const template = document.getElementById("cart-row-template");
+}
 
-    cart.forEach((roll, index) => {
-        const cartRow = template.content.cloneNode(true);
+function loadCart(){
+    const storedCart = localStorage.getItem("cart");
+    cart = storedCart ? JSON.parse(storedCart) : [];
+    console.log(cart);
 
-        const cartImage = cartRow.querySelector(".cart-product");
-        cartImage.src = `../assets/products/${roll.type.toLowerCase().replace(" ", "-")}-cinnamon-roll.jpg`;
-        cartImage.alt = `${roll.type} Cinnamon Roll`;
-
-        cartRow.querySelector(".roll-type").textContent = `${roll.type} Cinnamon Roll`;
-        cartRow.querySelector(".roll-glaze").textContent = `Glazing: ${roll.glazing}`;
-        cartRow.querySelector(".roll-size").textContent = `Pack size: ${roll.size}`;
-        cartRow.querySelector(".price").textContent = `$${parseFloat(roll.rollPrice).toFixed(2)}`;
-
-        const removeButton = cartRow.querySelector(".remove-btn");
-        removeButton.addEventListener("click", () => removeItemFromCart(index));
-
-        cartContainer.appendChild(cartRow);
-
-        totalPrice += parseFloat(roll.rollPrice);
-    });
-
-    totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
+    if (window.location.pathname.includes('cart.html')) {
+        updateCart();
+    }
 }
 
 function removeItemFromCart(index) {

@@ -36,6 +36,14 @@ let packPrice = [
     },
 ]
 
+let cart = [];
+
+function loadCart(){
+    const storedCart = localStorage.getItem("cart");
+    cart = storedCart ? JSON.parse(storedCart) : [];
+    updateCart();
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     const queryString = window.location.search;
     const params = new URLSearchParams(queryString);
@@ -100,21 +108,13 @@ class Roll {
     }
 }
 
-let cart = [];
-
-function loadCart(){
-    const storedCart = localStorage.getItem("cart");
-    cart = storedCart ? JSON.parse(storedCart) : [];
-    updateCart();
-}
-
 function updateCart() {
     const cartContainer = document.getElementById("cart-container");
     const totalPriceElement = document.getElementById("total-price");
 
     if (!cart || cart.length === 0){
         totalPriceElement.textContent = "$0.00";
-        cartContainer.innerHTML = '<p>Your cart is empty!</p>';
+        cartContainer.innerHTML = '<p class="empty-cart">Your cart is empty!</p>';
         return;
     }
 

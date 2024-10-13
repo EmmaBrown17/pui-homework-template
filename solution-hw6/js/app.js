@@ -45,6 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
         updateImageAndPrice(rollType);
         populateDropdowns(rollType);
     }
+    
+    loadCart();
 })
 
 function updateImageAndPrice(roll) {
@@ -80,19 +82,12 @@ function populateDropdowns(rollType) {
     });
 }
 
-function priceChange() {
-    const glazeInput = document.getElementById('glazing');
-    const packInput = document.getElementById('pack-size');
-    const rollType = new URLSearchParams(window.location.search).get('roll');
+function calculateRollPrice(rollType, glaze, packSize) {
     const basePrice = rolls[rollType].basePrice;
+    const glazeAdd = glazePrice.find(g => g.glazing === glaze)?.glazeAdd || 0;
+    const packMulti = packPrice.find(p => p.packsize === packSize)?.packMulti || 1;
 
-    const currentGlaze = glazeInput.value;
-    const currentPack = packInput.value;
-
-    const currentGlazeAdd = glazePrice.find(locateGlazePrice => locateGlazePrice.glazing === currentGlaze).glazeAdd;
-    const currentPackAdd = packPrice.find(locatePackPrice => locatePackPrice.packsize === currentPack).packMulti;
-
-    document.getElementById("price-info").textContent = `$${((basePrice + currentGlazeAdd) * currentPackAdd).toFixed(2)}`;
+    return ((basePrice + glazeAdd) * packMulti).toFixed(2);
 }
 
 class Roll {
@@ -105,41 +100,21 @@ class Roll {
     }
 }
 
-function calculateRollPrice(rollType, glaze, packSize) {
-    const basePrice = rolls[rollType].basePrice;
-    const glazeAdd = glazePrice.find(g => g.glazing === glaze)?.glazeAdd || 0;
-    const packMulti = packPrice.find(p => p.packsize === packSize)?.packMulti || 1;
-
-    return ((basePrice + glazeAdd) * packMulti).toFixed(2);
-}
-
-// const rollOnePrice = calculateRollPrice("Original", "Sugar Milk", "1");
-// const rollTwoPrice = calculateRollPrice("Walnut", "Vanilla Milk", "12");
-// const rollThreePrice = calculateRollPrice("Raisin", "Sugar Milk", "3");
-// const rollFourPrice = calculateRollPrice("Apple", "Original", "3");
-
-// const rollOne = new Roll("Original", "Sugar Milk", 1, rollOnePrice);
-// const rollTwo = new Roll("Walnut", "Vanilla Milk", 12, rollTwoPrice);
-// const rollThree = new Roll("Raisin", "Sugar Milk", 3, rollThreePrice);
-// const rollFour = new Roll("Apple", "Original", 3, rollFourPrice);
-
 let cart = [];
 
-document.addEventListener("DOMContentLoaded", () => {
+function loadCart(){
     const storedCart = localStorage.getItem("cart");
+    cart = storedCart ? JSON.parse(storedCart) : [];
+    updateCart();
+}
 
-    const cart = storedCart ? JSON.parse(storedCart) : [];
-
-    updateCart(cart);
-});
-
-function updateCart(cart) {
+function updateCart() {
     const cartContainer = document.getElementById("cart-container");
     const totalPriceElement = document.getElementById("total-price");
 
     if (!cart || cart.length === 0){
         totalPriceElement.textContent = "$0.00";
-        cartContainer.innerHTML = '<p>Your cart is empty!</p>';
+        cartContainer.innerHTML = '<p class="empty-cart">Your cart is empty!</p>';
         return;
     }
 
@@ -172,19 +147,11 @@ function updateCart(cart) {
     totalPriceElement.textContent = `$${totalPrice.toFixed(2)}`;
 }
 
-function loadCart(){
-    updateCart();
-}
-
-function removeItemFromCart(index, cart) {
+function removeItemFromCart(index) {
     cart.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(cart));
-    updateCart(cart);
+    updateCart();
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-    loadCart();
-})
 
 const addToCart = document.getElementById("add-to-cart");
 
@@ -203,8 +170,6 @@ if (addToCart) {
 
         const newRoll = new Roll(rollType, currentGlaze, currentPack, rollPrice);
 
-        let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
         cart.push(newRoll);
 
         localStorage.setItem("cart", JSON.stringify(cart));
@@ -213,4 +178,17 @@ if (addToCart) {
     });
 };
 
-console.log(cart);
+function priceChange() {
+    const glazeInput = document.getElementById('glazing');
+    const packInput = document.getElementById('pack-size');
+    const rollType = new URLSearchParams(window.location.search).get('roll');
+    const basePrice = rolls[rollType].basePrice;
+
+    const currentGlaze = glazeInput.value;
+    const currentPack = packInput.value;
+
+    const currentGlazeAdd = glazePrice.find(locateGlazePrice => locateGlazePrice.glazing === currentGlaze).glazeAdd;
+    const currentPackAdd = packPrice.find(locatePackPrice => locatePackPrice.packsize === currentPack).packMulti;
+
+    document.getElementById("price-info").textContent = `$${((basePrice + currentGlazeAdd) * currentPackAdd).toFixed(2)}`;
+}

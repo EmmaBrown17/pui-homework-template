@@ -259,3 +259,8 @@ a{
 .remove-btn{
   cursor: pointer;
 }
+
+.empty-cart{
+  text-align: center;
+  font-size: 20px;
+}

@@ -1,17 +1,9 @@
-<mark>**Note that this document order from FP4 -> FP1**</mark>
-
-<mark>Please sign up for the study</mark> at [https://tinyurl.com/pui-study](https://tinyurl.com/pui-study) to allow us to use your submission to create a better GenAI assistant for designers!
-
----
-
 # **FP4 \- Final Project Writeup**
 
 Feel free to refer to this [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) to make your writeup more organized, and you can preview your markdown file in VSCode [Markdown editing with Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview). 
 
 
 ## Part 1: Website Description
-
-Describe your website (300 words).
 
 * What is the purpose of your website?   
 * Who is the target audience?  
@@ -204,28 +196,42 @@ How would you use Generative AI responsibly?
 
 ### *Idea 1*
 
-![title for sketch1](images/sketch1.png)
+![Portfolio](images/sketch1.jpg)
 
-Add a few sentences about your design. Briefly state the motivation of each project idea. Example questions to answer:
-
-* What is the basic idea of your final project? (1-2 sentences)  
-* How do you plan to make your design interactive and engaging?  
-* How do you plan to make your design accessible?  
-* What information do you specifically want to convey and include on your website?
+My first website idea is a personal portfolio.
+The purpose of this wesbite would be to create a fun space to creatively display past projects.
+The target audience would be anyone interested in seeing my work but particularly those looking to employ me. As someone looking to get into UX and perhaps the gaming industry or sporting industry, these might be specific employers looking at my potfolio.
+I would convey tangibly, my projects, but creatively, my personality. I would want to create a fun and creative interactive website that includes animated transitions and playable mini games on each page. 
+The design would be accessible in that it would be designed to work with a screen reader by organizing my website elements thoughtfully.
+Growing up, my favorite game by far was Skate 2, I have logged many hours on it, particularly the customization screen as I always loved picking out outfits and setting up my board. Given this, I thought it would be fun to draw inspiration from the Skate 2 player customization screen for my home screen. I envision a little character sitting on a couch and the page selection bar being on the left like in Skate 2. I am not sure yet if I would add anything else to this screen but perhaps some little customization features like switching the hat or t-shirt might be a fun addition. 
+When the user clicks on the projects page, an animation of the character getting up and grabbing a skateboard would play, leading the user to the next page. The project page would load with a little scrolling display of the character skating down the street with signs on the road showing projects I have completed. There would be a little playable feature such as the user being able to press a key or click to do a skate trick to emulate the many skating games I played as a kid.
+Next, if the user clicked on the about page a similar animation would play but the character would grab a soccer ball instead of a skateboard. The character would head out of the page in a different direction and into the new page containing a soccer goal. This one draws on my past of playing soccer growing up. There could be a little playable target shooting mini game as about me statements displayed on the screen. 
 
 ### *Idea 2*
 
-…
+![NWSL Fantasy League](images/sketch2.jpg)
+
+My second website idea would be a Fantasy League for the National Women's Soccer League. 
+The purpose of this website would be to encourage excitement and interaction with women's soccer.
+The target audience would be sports fans and those interested in the NWSL.
+It would be accessible in that images would have alternate descriptions and functionalities would have multiple ways of being accessed such as mouse or keyboard click.
+I am a big proponent for women's sports and am a big fan of soccer and the NWSL so as a fan, I think this would be a really fun platform! There would be pages for account creation and forming teams with fellow fantasy leaguers with which everyone would draft their players and compete weekly for the top point scorer based on live league player stats. It would be engaging and interactive in that users would select their team based on current league players and be able to check their scores compared to the other users in their league. There could be a chat feature in which players could message either other with competitve sport banter. 
+
 
 ### *Idea 3*
 
-…
+![Female Painters Educational Game](images/sketch3.jpg)
+
+My third website idea would be an educational game that focused on exhibiting the work of famous female painters and their timeframes. 
+The purpose would be to educate users about successful female painters that have been sidelined from history.
+The target audience would be anyone since the purpose of this game is to educate people who may have not previously been aware of any female painters. I do not want to only target the niche group of people that are alrady aware of female painters. Since it will be a game, the target audience would be people who are looking to play a marble game and potentially who also like art.
+This game would be accessible by allowing the gameplay to be accessed with different functionalities such as the arrowkeys on a desktop or tilt with a mobile device.
+Another important topic to me aside from women's sports is women's art. This game would make learning about the work of great female artists through use of a game. The game would draw inspiration from Marble Blast Ultra which is another game that I played a lot as a kid. Certain shapes and lines of the painting will be raised to become playable pieces of the painting. The player would aim to travel either vertically down the length of the painting like pinball or horizontally to the end of the painting. The view of the user would be zoomed into the painting so the full image would not be viewable until the end, leading the user to subconsciously closely inspect the pieces of the painting as they navigate the marble through. Once at the end, the user will see a little summary screen that shows the painting in full, listing the artists name and era and a fact about the piece and artist. Then, the next level would exhibit a new painting.
 
 ## Feedback Summary
 
-Summarize all the critiques you received during the lab session (\~300 words). 
+For my first idea, I received the feedback that the gamification and transitions would allow me the ability to showcase skills in usability and since the core inspiration is coming from Skate 2, it could serve as a design and development guide. Next, for my NWSL Fantasy League idea, I could use preexisting websites such as fantasy leagues for professional men's teams such as the MLB Fantasy League platform as inspiration. I would have to learn how to access pre-loaded meaningful data but this could be a great learning opportunity and a way to challenge myself to learn something new and a little different. Lastly, for my female painter educational game idea, I would need to address the common educational game issue of balancing gamification with educational content. I need to be sure that the gamified elements enhance rather than distract from the educational content.
 
 ## Feedback Digestion
 
-Digest the feedback you got in the lab (\~300 words). Indicate which critique you will act on in your next design and why you chose to incorporate/dismiss pieces of critique.
-
+I agree with the critiques on my first two projects, being able to use existing platforms as guidance but also allowing enough individuality for me to be creative and offer my own solutions. The portfolio idea would definitely be a challenge in learning how to gamify and make transitions but it would be a challenge in expanding my usability skills so it would definitely be worth while. The NWSL Fantasy League would be challenging in a whole new realm of learning how to draw data from existing sources. In this way, I would broaden my knowledge of using data sources to interact and draw important data out of them to use in my own application. Finally, my last idea raised the most questions in being able to effectively balance education with gaming. I would have to be sure that all of the included gamified aspects would enhance the learning of the paintings. I envision that having the user intricately follow along the lines of the paintings to then be shown what they were moving through was a painting made be a famous female painter, would guide them to attach more personal meaning to the painting since they moved through it virtually. This is something I would need to test as it is only a hypothesis in my mind.

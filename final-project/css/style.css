@@ -1,0 +1,56 @@
+.sound-img {
+    display: none;
+    cursor: pointer;
+    margin: -15px 20px;
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    margin: 30px 30px;
+    background-color: pink;
+}
+
+.settings {
+    cursor: pointer;
+    margin: 20px 20px;
+}
+
+.play-button {
+    cursor: pointer;
+    width: 100px;
+    margin: 50px 50px;
+    margin-top: 10px;
+    margin-bottom: 120px;
+}
+
+.title {
+    text-align: center;
+    margin: 20px 100px;
+    font-size: 30px;
+}
+
+.back-home {
+    display: flex;
+    align-items: center;
+}
+
+.home-button {
+    cursor: pointer;
+    width: 20px;
+    margin: 20px 20px;
+}
+

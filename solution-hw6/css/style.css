@@ -264,3 +264,8 @@ a{
   text-align: center;
   font-size: 20px;
 }
+
+.paintings {
+  display: flex;
+  flex-direction: row;
+}

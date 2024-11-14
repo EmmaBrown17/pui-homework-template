@@ -54,3 +54,21 @@
     margin: 20px 20px;
 }
 
+.sofonisba-pic {
+    width: 300px;
+}
+
+.lebrun-pic {
+    width: 300px;
+}
+
+.cassatt-pic {
+    width: 300px;
+}
+
+.paintings {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}

@@ -11,12 +11,14 @@ let solution = [
   [0, 1, 1, 1, 0],
 ];
 let lives = 3;
+let flashState = [];
 
 function setup() {
   createCanvas(gridSize * cellSize + 100, gridSize * cellSize + 100);
 
   for (let i = 0; i < gridSize; i++) {
     gridState[i] = Array(gridSize).fill(0);
+    flashState[i] = Array(gridSize).fill(false);
   }
 }
 
@@ -34,7 +36,17 @@ function drawGrid() {
       let x = col * cellSize + 100;
       let y = row * cellSize + 100;
 
-      fill(gridState[row][col] === 1 ? 'black' : 'white');
+      if (flashState[row][col]) {
+        fill('red');
+      }
+      else if (gridState[row][col] === 1) {
+        fill('black');
+      }
+      else {
+        fill('white');
+      }
+
+      // fill(gridState[row][col] === 1 ? 'black' : 'white');
       stroke('black');
       rect(x, y, cellSize, cellSize);
     }
@@ -64,40 +76,32 @@ function mousePressed() {
   let row = floor((mouseY - 100) / cellSize);
 
   if (row >= 0 && row < gridSize && col >= 0 && col < gridSize) {
-    gridState[row][col] = gridState[row][col] === 0 ? 1 : 0;
+    if (solution[row][col] === 1) {
+      gridState[row][col] = 1;
+      console.log("Correct guess!");
+    } else {
+      lives--;
+      flashState[row][col] = true;
+      console.log("Wrong guess! Lives left: " + lives);
+      setTimeout(() => {
+        flashState[row][col] = false;
+      }, 300);
+    }
+
     checkSolution();
   }
 }
 
-// function checkGuess() {
-//     if (!arraysEqual(gridState, solution)) {
-//         lives--;
-//         console.log("Wrong guess! Lives left: " + lives);
-//     }
-// }
-
-// function arraysEqual(arr1, arr2) {
-//     for (let i = 0; i < arr1.length; i++) {
-//         for (let j = 0; j < arr1[i].length; j++) {
-//             if (arr1[i][j] !== arr2[i][j]) {
-//                 return false;
-//             }
-//         }
-//     }
-//     return true;
-// }
-
 function checkSolution() {
   let result = document.getElementById('result');
   if (arraysEqual(gridState, solution)) {
-    result.textContent = 'Correct Solution!';
+    result.textContent = 'You solved it!';
     result.style.color = 'green';
-  } else {
-    result.textContent = 'Incorrect Solution.';
+  } else if (lives <= 0) {
+    result.textContent = 'Game over! You ran out of lives.';
     result.style.color = 'red';
-    lives--;
-    console.log("Wrong guess! Lives left: " + lives);
-  }
+    noLoop();
+  } 
 }
 
 function arraysEqual(arr1, arr2) {

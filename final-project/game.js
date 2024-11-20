@@ -55,19 +55,25 @@ function drawGrid() {
 
 function drawClues() {
     for (let i = 0; i < gridSize; i++) {
-        let clueText = rowClues[i].join(' ');
-        fill(0);
-        textSize(18);
-        textAlign(RIGHT, CENTER);
-        text(clueText, 90, 100 + i * cellSize + cellSize / 2);
+      let clueText = rowClues[i].join(' ');
+      fill(0);
+      textSize(18);
+      textAlign(RIGHT, CENTER);
+      text(clueText, 90, 100 + i * cellSize + cellSize / 2);
+
+      // push();
+      // translate(90, 100 + i * cellSize + cellSize / 2);
+      // rotate(-HALF_PI);
+      // text(clueText, 0, 0);
+      // pop();
     }
 
     for (let i = 0; i < gridSize; i++) {
-        let clueText = colClues[i].join(' ');
-        fill(0);
-        textSize(18);
-        textAlign(CENTER, BOTTOM);
-        text(clueText, 100 + i * cellSize + cellSize / 2, 90);
+      let clueText = colClues[i].join(' ');
+      fill(0);
+      textSize(18);
+      textAlign(CENTER, BOTTOM);
+      text(clueText, 100 + i * cellSize + cellSize / 2, 90);
     }
 }
 

@@ -14,7 +14,7 @@ let lives = 3;
 let flashState = [];
 
 function setup() {
-  createCanvas(gridSize * cellSize + 100, gridSize * cellSize + 100);
+  createCanvas(gridSize * cellSize + 100, gridSize * cellSize + 150);
 
   for (let i = 0; i < gridSize; i++) {
     gridState[i] = Array(gridSize).fill(0);
@@ -124,7 +124,8 @@ function arraysEqual(arr1, arr2) {
 function displayLives() {
     fill(0);
     textSize(20);
-    text('Lives: ' + lives, 10, height - 10);
+    textAlign(LEFT, CENTER);
+    text('Lives: ' + lives, 10, gridSize * cellSize + 110);
 }
 
 function checkGameOver() {

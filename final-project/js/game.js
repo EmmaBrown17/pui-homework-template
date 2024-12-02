@@ -1,12 +1,12 @@
 let gridSize = 5; 
 let cellSize = 80; 
 let gridState = []; 
-let rowClues  = [[3], [1, 1], [5], [1, 1], [3]];
-let colClues = [[1], [5], [1, 1, 1], [5], [1]];
+let rowClues  = [[0], [1, 1], [0], [1, 1], [3]];
+let colClues = [[0], [1, 2], [1], [1, 2], [0]];
 let solution = [
-  [0, 1, 1, 1, 0],
+  [0, 0, 0, 0, 0],
   [0, 1, 0, 1, 0],
-  [1, 1, 1, 1, 1],
+  [0, 0, 0, 0, 0],
   [0, 1, 0, 1, 0],
   [0, 1, 1, 1, 0],
 ];
@@ -46,7 +46,6 @@ function drawGrid() {
         fill('white');
       }
 
-      // fill(gridState[row][col] === 1 ? 'black' : 'white');
       stroke('black');
       rect(x, y, cellSize, cellSize);
     }
@@ -60,12 +59,6 @@ function drawClues() {
       textSize(18);
       textAlign(RIGHT, CENTER);
       text(clueText, 90, 100 + i * cellSize + cellSize / 2);
-
-      // push();
-      // translate(90, 100 + i * cellSize + cellSize / 2);
-      // rotate(-HALF_PI);
-      // text(clueText, 0, 0);
-      // pop();
     }
 
     for (let i = 0; i < gridSize; i++) {

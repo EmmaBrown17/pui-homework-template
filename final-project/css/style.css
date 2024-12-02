@@ -82,3 +82,16 @@ main {
     display: flex;
     justify-content: center;
 }
+
+.sofonisba-level {
+    width: 1000px;
+}
+
+.tutorial {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+p {
+    text-align: center;
+}

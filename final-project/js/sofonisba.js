@@ -7,9 +7,12 @@ let gridSize = 5;
 function preload() {
     img = loadImage('images/SiteImages/paintings/sofonisba-anguissola.jpg');
 
-    let savedGrid = localStorage.getItem('level1GridState');
-    if (savedGrid) {
-        level1GridState = JSON.parse(savedGrid);
+    const isLevel1Completed = localStorage.getItem('level1Completed') === 'true';
+    if (isLevel1Completed) {
+        const savedGrid = localStorage.getItem('level1GridState');
+        if (savedGrid) {
+            level1GridState = JSON.parse(savedGrid);
+        }
     }
 }
 
@@ -29,7 +32,7 @@ function setup() {
 function draw() {
     image(img, 0, 0, cssWidth, cssHeight);
 
-    drawSquare(170, 120, "Level 1", 110, 110, hoveredSquare === "Level 1"); 
+    drawSquare(170, 120, "Level 1", 110, 110, hoveredSquare === "Level 1", level1GridState); 
     drawSquare(450, 425, "Level 2", 110, 110, hoveredSquare === "Level 2");
     drawSquare(720, 240, "Level 3", 110, 110, hoveredSquare === "Level 3");
 }
@@ -39,13 +42,13 @@ function drawSquare(x, y, label, width, height, isHovered, gridState) {
     fill(isHovered ? 'lightblue' : 'white');
     rect(x, y, width, height);
 
-    fill(0);
-    textAlign(CENTER, CENTER);
-    textSize(14);
-    text(label, x + width / 2, y + height / 2);
-
     if (gridState) {
         drawGridOnSquare(x, y, width, gridState);
+    } else {
+        fill(0);
+        textAlign(CENTER, CENTER);
+        textSize(14);
+        text(label, x + width / 2, y + height / 2);
     }
 }
 

@@ -111,12 +111,10 @@ document.addEventListener('contextmenu', (e) => {
 });
 
 function checkSolution() {
-  let result = document.getElementById('result');
-
   let isCorrect = true;
   for (let row = 0; row < gridSize; row++) {
     for (let col = 0; col < gridSize; col++) {
-        if (gridState[row][col] !== -1 && gridState[row][col] !== solution[row][col]) {
+        if (gridState[row][col] !== solution[row][col]) {
             isCorrect = false;
             break;
         }
@@ -125,13 +123,13 @@ function checkSolution() {
   }
 
   if (isCorrect) {
-    result.textContent = 'You solved it!';
-    result.style.color = 'green';
-
-    localStorage.setItem('level1GridState', JSON.stringify(gridState));
-    window.location.href = "sofonisba.html";
-    
+    console.log("Puzzle solved!");
+    onPuzzleComplete(gridState, true);
+    setTimeout(() => {
+      window.location.href = "sofonisba.html";
+    }, 1000);
   } else if (lives <= 0) {
+    let result = document.getElementById('result');
     result.textContent = 'Game over! You ran out of lives.';
     result.style.color = 'red';
     noLoop();
@@ -168,4 +166,18 @@ function checkGameOver() {
         result.style.color = 'green';
         noLoop();
     }
+}
+
+function onPuzzleComplete(grid, isSuccess) {
+  console.log(isSuccess);
+  if (isSuccess) {
+    console.log("Saving completed level to local");
+    localStorage.setItem('level1GridState', JSON.stringify(grid));
+    localStorage.setItem('level1Completed', true);
+  }
+}
+
+function onPuzzleReset() {
+  localStorage.removeItem('level1GridState');
+  localStorage.removeItem('level1Completed');
 }

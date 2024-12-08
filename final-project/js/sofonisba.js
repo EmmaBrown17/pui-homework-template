@@ -57,7 +57,7 @@ function drawGridOnSquare(x, y, width, gridState) {
 
     for (let row = 0; row < gridSize; row++) {
         for (let col = 0; col < gridSize; col++) {
-            let color = gridState[row][col] === 1 ? 'black' : gridState[row][col] === 0 ? 'white' : 'gray';
+            let color = gridState[row][col] === 1 ? 'black' : gridState[row][col] === 0 ? 'white' : 'white';
             fill(color);
             noStroke();
             rect(x + col * cellSize, y + row * cellSize, cellSize, cellSize);

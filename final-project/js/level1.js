@@ -112,22 +112,32 @@ document.addEventListener('contextmenu', (e) => {
 
 function checkSolution() {
   let isCorrect = true;
+
   for (let row = 0; row < gridSize; row++) {
     for (let col = 0; col < gridSize; col++) {
-        if (gridState[row][col] !== solution[row][col]) {
-            isCorrect = false;
-            break;
-        }
+      if (solution[row][col] === 1 && gridState[row][col] !== 1) {
+          isCorrect = false;
+          break;
+      }
+      if (solution[row][col] === 0 && gridState[row][col] === 1) {
+        isCorrect = false;
+        break;
+      }
     }
     if (!isCorrect) break;
   }
 
   if (isCorrect) {
     console.log("Puzzle solved!");
+    let result = document.getElementById('result');
+    result.textContent = 'You solved it!';
+    result.style.color = 'green';
     onPuzzleComplete(gridState, true);
+    noLoop();
+
     setTimeout(() => {
       window.location.href = "sofonisba.html";
-    }, 1000);
+    }, 2000);
   } else if (lives <= 0) {
     let result = document.getElementById('result');
     result.textContent = 'Game over! You ran out of lives.';

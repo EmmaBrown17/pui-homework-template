@@ -98,7 +98,7 @@
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
-    font-size: 16px;
+    font-size: 14px;
     padding: 10px 15px;
     border-radius: 8px;
     text-align: center;
@@ -158,4 +158,22 @@ p {
 
 #try-again-button:hover {
     background-color: gray;
+}
+
+.completion-message {
+    text-align: center;
+    font-size: 16px;
+    color: black;
+    margin: 20px 0;
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 8px;
+    display: none;
+}
+
+#return-to-gallery {
+    display: block;
+    text-align: center;
+    margin: 20px auto;
+    padding: 10px;
 }

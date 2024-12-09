@@ -58,22 +58,50 @@ function draw() {
 }
 
 function displayCompletionMessage() {
-    const squareX = (cssWidth - 700) / 2;
-    const squareY = (cssHeight - 700) / 2;
-    const squareWidth = 700;
-    const squareHeight = 700;
-    drawSquare(squareX, squareY, "", squareWidth, squareHeight, false);
+    const completionMessageDiv = document.getElementById("completion-message");
 
-    fill(0);
-    textAlign(CENTER, CENTER);
-    textSize(18);
-    text("Congratulations! \n\n" + 
-        "Sofonisba Anguissola levels complete! \n" + 
-        "The Chess Game painting has been unlocked \n" + 
-        "and added to your gallery.", 
-    squareX + squareWidth / 2,
-    squareY + squareHeight / 2);
+    completionMessageDiv.innerHTML = `Congratulations, all Sofonisba Anguissola levels complete!<br>
+    The Chess Game has been added to your gallery.`;
+
+    completionMessageDiv.style.display = "block";
+    completionMessageDiv.classList.add("visible");
+
+    clearGridAndSquares();
+
+    // const squareX = (cssWidth - 700) / 2;
+    // const squareY = (cssHeight - 700) / 2;
+    // const squareWidth = 700;
+    // const squareHeight = 700;
+    // drawSquare(squareX, squareY, "", squareWidth, squareHeight, false);
+
+    // fill(0);
+    // textAlign(CENTER, CENTER);
+    // textSize(18);
+    // text("Congratulations! \n\n" + 
+    //     "Sofonisba Anguissola levels complete! \n" + 
+    //     "The Chess Game painting has been unlocked \n" + 
+    //     "and added to your gallery.", 
+    // squareX + squareWidth / 2,
+    // squareY + squareHeight / 2);
 }
+
+function clearGridAndSquares() {
+    const canvas = document.querySelector("canvas");
+    if (canvas) {
+        const context = canvas.getContext("2d");
+        context.clearRect(0, 0, canvas.width, canvas.height);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    const isLevel1Completed = localStorage.getItem("level1Completed") === "true";
+    const isLevel2Completed = localStorage.getItem("level2Completed") === "true";
+    const isLevel3Completed = localStorage.getItem("level3Completed") === "true";
+
+    if (isLevel1Completed && isLevel2Completed && isLevel3Completed) {
+        displayCompletionMessage();
+    }
+});
 
 function drawSquare(x, y, label, width, height, isHovered, gridState) {
     noStroke();

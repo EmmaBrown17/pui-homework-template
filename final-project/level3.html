@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js"></script>
+    <script defer src="js/app.js"></script>
+    <script defer src="js/level3.js"></script>
+  </head>
+
+  <title>Mosaic Masterpiece</title>
+  
+  <body>
+
+    <div class="container">
+
+        <div class="banner">
+            <div class="back-home">
+                <a href="index.html">
+                    <img class="home-button" alt="home button" src="images/SiteImages/home.svg">
+                </a>
+            </div>
+
+            <h2>Level 3</h2>
+
+            <div class="settings-img">
+                <img class="settings" alt="settings gear" src="images/SiteImages/settings (1).svg">
+                <div class="sound-img">
+                    <img class="sound" alt="sound switch" src="images/SiteImages/sound-high.svg">
+                </div>
+            </div>
+        </div>
+
+        <div class="puzzle">
+            <h2 id="result"></h2>
+        </div>
+
+        <p id="reminder">Left-click to make a guess.
+            Right-click to mark a square.
+        </p>
+
+        <div id="game-over">
+            <p id="result"></p>
+            <button id="try-again-button" onclick="restartGame()">Try Again</button>
+        </div>
+
+    </div>
+    
+    </body>
+</html>

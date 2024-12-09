@@ -1,14 +1,14 @@
 let gridSize = 5; 
 let cellSize = 80; 
 let gridState = []; 
-let rowClues  = [[1], [1], [3], [1, 1], [2]];
-let colClues = [[1], [3], [1], [1], [1, 2]];
+let rowClues  = [[2], [0], [1], [2], [0]];
+let colClues = [[2], [1, 1], [1], [0], [0]];
 let solution = [
-  [0, 0, 0, 0, 1],
-  [0, 1, 0, 0, 0],
-  [1, 1, 1, 0, 0],
-  [0, 1, 0, 0, 1],
-  [0, 0, 0, 1, 1],
+  [0, 1, 1, 0, 0],
+  [0, 0, 0, 0, 0],
+  [1, 0, 0, 0, 0],
+  [1, 1, 0, 0, 0],
+  [0, 0, 0, 0, 0],
 ];
 let lives = 3;
 let flashState = [];
@@ -186,14 +186,14 @@ function onPuzzleComplete(grid, isSuccess) {
   console.log(isSuccess);
   if (isSuccess) {
     console.log("Saving completed level to local");
-    localStorage.setItem('level2GridState', JSON.stringify(grid));
-    localStorage.setItem('level2Completed', true);
+    localStorage.setItem('level3GridState', JSON.stringify(grid));
+    localStorage.setItem('level3Completed', true);
   }
 }
 
 function onPuzzleReset() {
-  localStorage.removeItem('level2GridState');
-  localStorage.removeItem('level2Completed');
+  localStorage.removeItem('level3GridState');
+  localStorage.removeItem('level3Completed');
 }
 
 function restartGame() {

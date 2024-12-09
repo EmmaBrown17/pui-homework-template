@@ -3,6 +3,7 @@ let cssWidth, cssHeight;
 let hoveredSquare = null;
 let level1GridState = null;
 let level2GridState = null;
+let level3GridState = null;
 let gridSize = 5;
 
 function preload() {
@@ -10,6 +11,7 @@ function preload() {
 
     const isLevel1Completed = localStorage.getItem('level1Completed') === 'true';
     const isLevel2Completed = localStorage.getItem('level2Completed') === 'true';
+    const isLevel3Completed = localStorage.getItem('level3Completed') === 'true';
     if (isLevel1Completed) {
         const savedGrid = localStorage.getItem('level1GridState');
         if (savedGrid) {
@@ -20,6 +22,12 @@ function preload() {
         const savedGrid2 = localStorage.getItem('level2GridState');
         if (savedGrid2) {
             level2GridState = JSON.parse(savedGrid2);
+        }
+    }
+    if (isLevel3Completed) {
+        const savedGrid3 = localStorage.getItem('level3GridState');
+        if (savedGrid3) {
+            level3GridState = JSON.parse(savedGrid3);
         }
     }
 }
@@ -42,7 +50,7 @@ function draw() {
 
     drawSquare(170, 120, "Level 1", 110, 110, hoveredSquare === "Level 1", level1GridState); 
     drawSquare(450, 425, "Level 2", 110, 110, hoveredSquare === "Level 2", level2GridState);
-    drawSquare(720, 240, "Level 3", 110, 110, hoveredSquare === "Level 3");
+    drawSquare(720, 240, "Level 3", 110, 110, hoveredSquare === "Level 3", level3GridState);
 }
 
 function drawSquare(x, y, label, width, height, isHovered, gridState) {

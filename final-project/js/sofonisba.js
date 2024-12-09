@@ -2,16 +2,24 @@ let img;
 let cssWidth, cssHeight;
 let hoveredSquare = null;
 let level1GridState = null;
+let level2GridState = null;
 let gridSize = 5;
 
 function preload() {
     img = loadImage('images/SiteImages/paintings/sofonisba-anguissola.jpg');
 
     const isLevel1Completed = localStorage.getItem('level1Completed') === 'true';
+    const isLevel2Completed = localStorage.getItem('level2Completed') === 'true';
     if (isLevel1Completed) {
         const savedGrid = localStorage.getItem('level1GridState');
         if (savedGrid) {
             level1GridState = JSON.parse(savedGrid);
+        }
+    }
+    if (isLevel2Completed) {
+        const savedGrid2 = localStorage.getItem('level2GridState');
+        if (savedGrid2) {
+            level2GridState = JSON.parse(savedGrid2);
         }
     }
 }
@@ -33,7 +41,7 @@ function draw() {
     image(img, 0, 0, cssWidth, cssHeight);
 
     drawSquare(170, 120, "Level 1", 110, 110, hoveredSquare === "Level 1", level1GridState); 
-    drawSquare(450, 425, "Level 2", 110, 110, hoveredSquare === "Level 2");
+    drawSquare(450, 425, "Level 2", 110, 110, hoveredSquare === "Level 2", level2GridState);
     drawSquare(720, 240, "Level 3", 110, 110, hoveredSquare === "Level 3");
 }
 

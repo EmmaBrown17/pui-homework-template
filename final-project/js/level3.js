@@ -1,10 +1,10 @@
 let gridSize = 5; 
 let cellSize = 80; 
 let gridState = []; 
-let rowClues  = [[2], [0], [1], [2], [0]];
-let colClues = [[2], [1, 1], [1], [0], [0]];
+let rowClues  = [[2, 1], [0], [1], [2], [0]];
+let colClues = [[2], [1, 1], [1], [0], [1]];
 let solution = [
-  [0, 1, 1, 0, 0],
+  [0, 1, 1, 0, 1],
   [0, 0, 0, 0, 0],
   [1, 0, 0, 0, 0],
   [1, 1, 0, 0, 0],

@@ -51,6 +51,28 @@ function draw() {
     drawSquare(170, 120, "Level 1", 110, 110, hoveredSquare === "Level 1", level1GridState); 
     drawSquare(450, 425, "Level 2", 110, 110, hoveredSquare === "Level 2", level2GridState);
     drawSquare(720, 240, "Level 3", 110, 110, hoveredSquare === "Level 3", level3GridState);
+
+    if (level1GridState && level2GridState && level3GridState) {
+        displayCompletionMessage();
+    }
+}
+
+function displayCompletionMessage() {
+    const squareX = (cssWidth - 700) / 2;
+    const squareY = (cssHeight - 700) / 2;
+    const squareWidth = 700;
+    const squareHeight = 700;
+    drawSquare(squareX, squareY, "", squareWidth, squareHeight, false);
+
+    fill(0);
+    textAlign(CENTER, CENTER);
+    textSize(18);
+    text("Congratulations! \n\n" + 
+        "Sofonisba Anguissola levels complete! \n" + 
+        "The Chess Game painting has been unlocked \n" + 
+        "and added to your gallery.", 
+    squareX + squareWidth / 2,
+    squareY + squareHeight / 2);
 }
 
 function drawSquare(x, y, label, width, height, isHovered, gridState) {

@@ -169,6 +169,10 @@ function checkGameOver() {
         let result = document.getElementById('result');
         result.textContent = 'Game Over! You ran out of lives.';
         result.style.color = 'red';
+
+        let gameOverDiv = document.getElementById('game-over');
+        gameOverDiv.style.display = 'block';
+
         noLoop();
     } else if (arraysEqual(gridState, solution)) {
         let result = document.getElementById('result');
@@ -190,4 +194,22 @@ function onPuzzleComplete(grid, isSuccess) {
 function onPuzzleReset() {
   localStorage.removeItem('level1GridState');
   localStorage.removeItem('level1Completed');
+}
+
+function restartGame() {
+  for (let i = 0; i < gridSize; i++) {
+    gridState[i] = Array(gridSize).fill(0);
+    flashState[i] = Array(gridSize).fill(false);
+  }
+
+  lives = 3;
+
+  let gameOverDiv = document.getElementById('game-over');
+  gameOverDiv.style.display = 'none';
+
+  let result = document.getElementById('result');
+  result.textContent = '';
+
+  clear();
+  loop();
 }

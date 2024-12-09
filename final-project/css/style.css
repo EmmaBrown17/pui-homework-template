@@ -73,6 +73,25 @@
     justify-content: space-evenly;
 }
 
+.paintings img.locked {
+    background-color: black;
+    width: 150px; 
+    height: 150px; 
+    border: 2px solid white;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-size: 48px;
+    color: white;
+    content: "?";
+    object-fit: cover;
+}
+
+.paintings img.unlocked {
+    display: block;
+}
+
 .puzzle {
     display: flex;
     justify-content: center;

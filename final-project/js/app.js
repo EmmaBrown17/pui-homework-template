@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         sofonisbaPic.classList.add("locked");
         sofonisbaPic.classList.remove("unlocked");
-        sofonisbaPic.src = "images/SiteImages/mysteryPainting.jpg"; //i dont think i need this lemme try and see
+        sofonisbaPic.src = "images/SiteImages/mysteryPainting.jpg"; 
     }
 
     // if (isLevel4Completed && isLevel5Completed isLevel6Completed) {

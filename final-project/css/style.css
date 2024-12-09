@@ -73,23 +73,47 @@
     justify-content: space-evenly;
 }
 
-.paintings img.locked {
-    background-color: black;
-    width: 150px; 
-    height: 150px; 
-    border: 2px solid white;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    font-family: Arial, sans-serif;
-    font-size: 48px;
-    color: white;
-    content: "?";
+.paintings .locked {
+    position: relative;
+    width: 300px; 
     object-fit: cover;
+    filter: none;
 }
 
-.paintings img.unlocked {
+.paintings .locked-link {
+    position: relative;
     display: block;
+    text-decoration: none;
+}
+
+.paintings .locked img {
+    width: 100%;
+    filter: none;
+}
+
+.paintings .locked-link .hover-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.paintings .locked-link:hover .hover-message {
+    display: block;
+}
+
+.paintings .locked-link:hover img {
+    filter: grayscale(100%);
+    border: 2px solid black;
 }
 
 .puzzle {

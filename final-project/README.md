@@ -1,39 +1,45 @@
 # **FP4 \- Final Project Writeup**
 
-Feel free to refer to this [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) to make your writeup more organized, and you can preview your markdown file in VSCode [Markdown editing with Visual Studio Code](https://code.visualstudio.com/docs/languages/markdown#_markdown-preview). 
-
-
 ## Part 1: Website Description
 
-* What is the purpose of your website?   
+* What is the purpose of your website? 
+  The purpose of my website is to educate people about female painters in a fun and engaging way.  
 * Who is the target audience?  
-* What information do you convey with your website?   
+  I would love for my target audience to be any and all but I understand the niche that I am operating under, so I think the minimum criteria for my target audience would have to be those interested in art history. I did not want to label my game as "female artist" so that the gender label is dropped from art and people can understand it as an educational artist game rather than segregating art from female art. 
+* What information do you convey with your website? 
+  I convey a brief explanation of the painting once the player has completed all of the levels. Also, visual information is conveyed when the player completes all of the levels and is able to view the painting in full.  
 * How is it interesting and engaging? 
+  I think using nonogram puzzles to encourage engagement is a unique way to get players interested in learning about art history.
 
 ## Part 2: User Interaction
 
 How a user would interact with your website? For each step, briefly but clearly state the interaction type & how we should reproduce it.
 
-1. Interaction type. Click on X on page Y / scroll on page X, etc.  
-2. 
+1. Player will click on play icon to open the My Gallery page.
+2. The player can then choose to either play the tutorial or jump right into unlocking the Sofonisba Anguissola painting. 
+3. If they start with the tutorial, they will be able to scroll through the instructions to learn how to play and practice solving the puzzle through clicks.
+4. They can return to My Gallery by clicking the button to go back.
+5. From My Gallery they can start the Anguissola levels. I did not complete the other painting levels, Elisabeth Vigee LeBrun, and Mary Cassatt but if those were completed, they could choose which painting they would like to explore further.
+6. They would click on the level 1 box and be redirected to the puzzle page.
+7. Once they complete that puzzle, they will be redirected to the level selection page with which they can continue the same flow for levels 2 and 3.
+8. Once they have completed all of the levels, the information describing the painting will be displayed for the player to read. They will have unlocked the painting and click to return back to My Gallery.
 
 ## Part 3: External Tool
 
 Describe what important external tool you used (JavaScript library, Web API, animations, or other). Following the bulleted list format below, reply to each of the prompts.
 
-1. Name of tool1  
-   * Why did you choose to use it over other alternatives? (2 sentences max)  
-   * How you used it? (2 sentences max)  
-   * What does it add to your website? (2 sentences max)  
-2. Name of tool2
+1. P5
+   * I specifically chose P5 because it seemed to be a favorite for efficiency. 
+   * I used it to draw my canvases. 
+   * It is important for the essence of my game, drawing the grids for which the puzzles are built upon. 
 
 ## Part 4: Design Iteration
 
-Describe how you iterated on your prototypes, if at all, including any changes you made to your original design while you were implementing your website and the rationale for the changes. (4-8 sentences max)
+Initially, I had pictured having one puzzle per painting, but after input from user testing that they wanted to feel more engaged with the painting and motivated to interact further with it, I decided to build multiple levels into one painting. I found this to be an effective solution to increase user attachment with the painting and inspire interest in the piece which is great for the educational purposes, however, it meant that my painting selection was limited. I ran out of time to further elaborate my project with the other two paintings but I hope to expand on it further and complete the project in its entirety!
 
 ## Part 5: Implementation Challenge
 
-What challenges did you experience in implementing your website? (2-4 sentences max)
+I experienced many challenges in implementing my project. Figuring out how to get the puzzles to work was a priority so thankfully I solved that early on but getting the grid to move to the small square in the level selection took a lot of time, effort, and iterations. Additionally, figuring out how to best create the tutorial took a lot of time. I am happy with the implementation that I settled on, however, getting the styling correct here while not messing with the other pages was a surprisingly huge challenge. 
 
 ## Part 6: Generative AI Use and Reflection
 
@@ -51,49 +57,46 @@ For the following aspects of your project, edit the corresponding table cell to 
 
 | Tool Name | Ratings | design | plan | write code | debug | \_ (other?) |
 | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-| Tool1 | Usage | Yes/No | Yes/No | Yes/No | Yes/No | Yes/No |
-| Tool1 | Productivity | 1~7 | 1~7 | 1~7 | 1~7 | 1~7 |
-| Tool2| Usage | Yes/No | Yes/No | Yes/No | Yes/No | Yes/No |
-| Tool2 | Productivity | 1~7 | 1~7 | 1~7 | 1~7 | 1~7 |
+| ChatGPT | Usage | Yes | No | Yes | Yes 
+| ChatGPT | Productivity | 7 | N/A | 7 | 7 | 7 
 
 
 ### Usage Reflection
 
 > Impact on your design and plan 
 * It matched my expectations and plan in [FP2](#generative-ai-use-plan) in that … For example, 
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT: It helped me to figure out how to best code the ideas I had. I did not use it for creativity, but to help my creativity become a reality.
 * It did not match my expectations and plan in [FP2](#generative-ai-use-plan) in that … For example, 
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT: It matched my expectations.
 * GenAI tool did/did not influence my final design and implementation plan because … For example, 
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT: It influenced my design in that it helped me code my ideas but it did not offer me creative changes as I thought up the design myself.
 
 > Use patterns
 * I accepted the generations when …  For example, 
-  1. Tool1: this tool once suggested … and I adjusted my design according to the suggestion because … 
-  2. Tool2: 
+  1. ChatGPT: Some of the styling suggestions it gave me were good ideas so I incorporated those into my design. These included button padding and colors. 
 * I critiqued/evaluated the generated suggestions by … For example, 
-  1. Tool1: this tool once suggested … but I modified/rejected the suggestion because … 
-  2. Tool2: 
+  1. ChatGPT: Some of its solutions were different from its previous suggestions so it resulted in incosistencies, so I did not take these suggestions. For example, it would give me a great way to accomplish level 1 but then a different approach for level 2. I went with the solution that I liked best and implemented that same solution across levels.
 
 
 > Pros and cons of using GenAI tools
 * Pros
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT: Not being confident in my technical skills, I did not need to limit my ideas to the simple tasks I know how to do without assistance. I was able to imagine bigger and create a product more intriguing to me.
 * Cons
-  1. Tool1: 
-  2. Tool2:
+  1. ChatGPT: While in the grand scope of thing, it helped me create a more in-depth game, I found myself often times seeking its suggestion for things I would have approached in a different way. Being aware of the different ways of approaching a solution is good when utilizing generative AI technologies.
 
 
 ### Usage Log
 
 Document the usage logs (prompts and chat history links) for the GenAI tools you used. Some tools may not have an easy way to share usage logs, just try your best! Some instructions for different tools:
 
-1. [ChatGPT](https://help.openai.com/en/articles/7925741-chatgpt-shared-links-faq) / [Gemini](https://support.google.com/gemini/answer/13743730?hl=en&co=GENIE.Platform%3DDesktop): share the anonymous link to all of your chat histories relevant to this project
-2. [GitHub Copilot (VSCode)](https://code.visualstudio.com/docs/copilot/copilot-chat#:~:text=You%20can%20export%20all%20prompts%20and%20responses%20for%20a%20chat%20session%20in%20a%20JSON%20file%20with%20the%20Chat%3A%20Export%20Session...%20command%20(workbench.action.chat.export)%20in%20the%20Command%20Palette.): export chat histories relevant to this project.
+1. [ChatGPT]https://chatgpt.com/share/6758b529-aff8-8013-829e-3d70c4e99d3d
+https://chatgpt.com/share/6758b54a-f368-8013-9272-d48295d5c727
+https://chatgpt.com/share/6758b55c-514c-8013-a4a9-9f270527772f
+https://chatgpt.com/share/6758b56d-00a8-8013-ab9c-495e91a64f31
+https://chatgpt.com/share/6758b591-a188-8013-ab55-8d67c06bbb18
+https://chatgpt.com/share/6758b5a2-4d48-8013-ac66-fcc2e0a08e12
+https://chatgpt.com/share/6758b5b2-6d0c-8013-9fcc-b23b4651f132
+
 
 ---
 

@@ -135,6 +135,15 @@ main {
     margin-bottom: 60px;
 }
 
+ol {
+    text-align: left;
+    margin-left: 100px;
+}
+
+li {
+    padding: 5px;
+}
+
 p {
     text-align: center;
     font-size: 16px;

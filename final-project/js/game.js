@@ -183,15 +183,6 @@ function checkGameOver() {
     }
 }
 
-// function onPuzzleComplete(grid, isSuccess) {
-//   console.log(isSuccess);
-//   if (isSuccess) {
-//     console.log("Saving completed level to local");
-//     localStorage.setItem('level1GridState', JSON.stringify(grid));
-//     localStorage.setItem('level1Completed', true);
-//   }
-// }
-
 function onPuzzleReset() {
   localStorage.removeItem('level1GridState');
   localStorage.removeItem('level1Completed');

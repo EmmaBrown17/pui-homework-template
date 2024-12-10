@@ -139,9 +139,6 @@ function checkSolution() {
     onPuzzleComplete(gridState, true);
     noLoop();
 
-    setTimeout(() => {
-      window.location.href = "sofonisba.html";
-    }, 2000);
   } else if (lives <= 0) {
     let result = document.getElementById('result');
     result.textContent = 'Game over! You ran out of lives.';
@@ -186,14 +183,14 @@ function checkGameOver() {
     }
 }
 
-function onPuzzleComplete(grid, isSuccess) {
-  console.log(isSuccess);
-  if (isSuccess) {
-    console.log("Saving completed level to local");
-    localStorage.setItem('level1GridState', JSON.stringify(grid));
-    localStorage.setItem('level1Completed', true);
-  }
-}
+// function onPuzzleComplete(grid, isSuccess) {
+//   console.log(isSuccess);
+//   if (isSuccess) {
+//     console.log("Saving completed level to local");
+//     localStorage.setItem('level1GridState', JSON.stringify(grid));
+//     localStorage.setItem('level1Completed', true);
+//   }
+// }
 
 function onPuzzleReset() {
   localStorage.removeItem('level1GridState');

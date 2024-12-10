@@ -239,3 +239,7 @@ canvas {
     background-color: white;
     margin-bottom: 30px;
 }
+
+#tutorial-return {
+    text-align: center;
+}

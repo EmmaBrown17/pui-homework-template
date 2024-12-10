@@ -24,6 +24,15 @@
     background-color: pink;
 }
 
+/* .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+} */
+
 .settings {
     cursor: pointer;
     margin: 20px 20px;
@@ -117,8 +126,10 @@
 }
 
 .puzzle {
+    flex: 1;
     display: flex;
     justify-content: center;
+    min-width: 300px;
 }
 
 main {
@@ -131,18 +142,33 @@ main {
 }
 
 .tutorial {
-    text-align: center;
-    margin-bottom: 60px;
+    flex: 1;
+    max-width: 400px;
 }
 
-ol {
+.tutorial h4 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tutorial ol {
+    padding-left: 20px;
+}
+
+.tutorial ol li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* ol {
     text-align: left;
     margin-left: 100px;
 }
 
 li {
     padding: 5px;
-}
+} */
 
 p {
     text-align: center;
@@ -191,4 +217,18 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+    gap: 20px;
+    width: 100%;
+}
+
+canvas {
+    display: block;
+    margin: auto;
 }

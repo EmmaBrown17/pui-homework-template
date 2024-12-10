@@ -14,7 +14,11 @@ let lives = 3;
 let flashState = [];
 
 function setup() {
-  createCanvas(gridSize * cellSize + 150, gridSize * cellSize + 150);
+  let canvasWidth = gridSize * cellSize + 300;
+  let canvasHeight = gridSize * cellSize + 150;
+  let canvas = createCanvas(canvasWidth, canvasHeight);
+
+  canvas.parent('puzzle');
 
   for (let i = 0; i < gridSize; i++) {
     gridState[i] = Array(gridSize).fill(0);

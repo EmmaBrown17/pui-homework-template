@@ -1,18 +1,3 @@
-function toggleSoundImage() {
-    const soundImg = document.querySelector('.sound-img');
-
-    if (soundImg.style.display === 'none' || soundImg.style.display === '') {
-        soundImg.style.display = 'block';
-        /*add turn off sound capability here
-        add cross out or lighter shade in css here*/
-    }
-    else {
-        soundImg.style.display = 'none';
-    }
-}
-
-document.querySelector('.settings-img').addEventListener('click', toggleSoundImage);
-
 document.addEventListener("DOMContentLoaded", () => {
     const isLevel1Completed = localStorage.getItem("level1Completed") === "true";
     const isLevel2Completed = localStorage.getItem("level2Completed") === "true";
@@ -50,3 +35,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const sofonisbaPic = document.getElementById("sofonisba-pic");
 console.log(sofonisbaPic.classList);
+

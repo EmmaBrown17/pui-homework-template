@@ -66,12 +66,11 @@ function displayCompletionMessage() {
 
     infoMessageDiv.innerHTML = `Created: 1555 <br><br>
     Period: Renaissance <br><br>
-    At this time, Chess, along with painting, was seen as too complex for women.<br>
-    By depicting her three young sisters playing Chess, Anguissola was challenging <br>
-    the viewer to see women as equally intellectual and capable as men. Moreover, <br>
-    the winner of the game can be seen holding the Queen, the most powerful piece,<br>
-    as she looks back at the viewer with a self-assured glance, forcing the audience to <br>
-    see women as more than just pawns.`
+    During the Italian Renaissance, Chess, along with painting, was seen as too complex for women <br>
+    to partake in. By depicting her three young sisters playing Chess, Anguissola was challenging <br>
+    the viewer to see women on the same intellectual level as men. Moreover, the winner of the game <br>
+    can be seen holding the Queen, the most powerful piece. She looks back at the viewer with a self-assured <br>
+    glance, forcing the audience to see women as more than just pawns.`
 
     completionMessageDiv.style.display = "block";
     completionMessageDiv.classList.add("visible");

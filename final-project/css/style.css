@@ -21,17 +21,8 @@
 
 .container {
     margin: 30px 30px;
-    background-color: pink;
+    background-color: white;
 }
-
-/* .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-} */
 
 .settings {
     cursor: pointer;
@@ -80,6 +71,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+    margin: 20px auto;
 }
 
 .paintings .locked {
@@ -242,4 +234,38 @@ canvas {
 
 #tutorial-return {
     text-align: center;
+}
+
+.timeline-container {
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    height: 3px;
+    background-color: black;
+    width: 90%;
+    margin: 60px auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timeline .start-year,
+.timeline .end-year {
+    position: absolute;
+    font-size: 14px;
+    color: black;
+    top: -20px;
+}
+
+.timeline .start-year {
+    left: 0;
+}
+
+.timeline .end-year {
+    right: 0;
 }

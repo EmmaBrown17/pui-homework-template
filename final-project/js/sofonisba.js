@@ -59,30 +59,24 @@ function draw() {
 
 function displayCompletionMessage() {
     const completionMessageDiv = document.getElementById("completion-message");
+    const infoMessageDiv = document.getElementById("information");
 
     completionMessageDiv.innerHTML = `Congratulations, all Sofonisba Anguissola levels complete!<br>
     The Chess Game has been added to your gallery.`;
+
+    infoMessageDiv.innerHTML = `Created: 1555 <br><br>
+    Period: Renaissance <br><br>
+    At this time, Chess, along with painting, was seen as too complex for women.<br>
+    By depicting her three young sisters playing Chess, Anguissola was challenging <br>
+    the viewer to see women as equally intellectual and capable as men. Moreover, <br>
+    the winner of the game can be seen holding the Queen, the most powerful piece,<br>
+    as she looks back at the viewer with a self-assured glance, forcing the audience to <br>
+    see women as more than just pawns.`
 
     completionMessageDiv.style.display = "block";
     completionMessageDiv.classList.add("visible");
 
     clearGridAndSquares();
-
-    // const squareX = (cssWidth - 700) / 2;
-    // const squareY = (cssHeight - 700) / 2;
-    // const squareWidth = 700;
-    // const squareHeight = 700;
-    // drawSquare(squareX, squareY, "", squareWidth, squareHeight, false);
-
-    // fill(0);
-    // textAlign(CENTER, CENTER);
-    // textSize(18);
-    // text("Congratulations! \n\n" + 
-    //     "Sofonisba Anguissola levels complete! \n" + 
-    //     "The Chess Game painting has been unlocked \n" + 
-    //     "and added to your gallery.", 
-    // squareX + squareWidth / 2,
-    // squareY + squareHeight / 2);
 }
 
 function clearGridAndSquares() {

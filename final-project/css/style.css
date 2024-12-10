@@ -162,7 +162,7 @@ p {
 
 .completion-message {
     text-align: center;
-    font-size: 16px;
+    font-size: 20px;
     color: black;
     margin: 20px 0;
     background-color: #f5f5f5;
@@ -176,4 +176,10 @@ p {
     text-align: center;
     margin: 20px auto;
     padding: 10px;
+}
+
+#information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

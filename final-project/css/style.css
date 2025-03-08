@@ -133,6 +133,14 @@ main {
     width: 1000px;
 }
 
+.lebrun-level {
+    width: 1000px;
+}
+
+.cassatt-level {
+    width: 1000px;
+}
+
 .tutorial {
     flex: 1;
     max-width: 400px;

@@ -1,14 +1,13 @@
 let gridSize = 5; 
 let cellSize = 80; 
 let gridState = []; 
-//once this works, go in and change grid and clues
-let rowClues  = [[2, 1], [0], [1], [2], [0]];
-let colClues = [[2], [1, 1], [1], [0], [1]];
+let rowClues  = [[0], [2], [5], [4], [0]];
+let colClues = [[3], [3], [2], [2], [1]];
 let solution = [
-  [0, 1, 1, 0, 1],
   [0, 0, 0, 0, 0],
-  [1, 0, 0, 0, 0],
   [1, 1, 0, 0, 0],
+  [1, 1, 1, 1, 1],
+  [1, 1, 1, 1, 0],
   [0, 0, 0, 0, 0],
 ];
 let lives = 3;

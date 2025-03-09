@@ -49,9 +49,9 @@ function draw() {
     image(img, 0, 0, cssWidth, cssHeight);
 
     //update square locations once works
-    drawSquare(170, 120, "Level 7", 110, 110, hoveredSquare === "Level 7", level7GridState); 
-    drawSquare(450, 425, "Level 8", 110, 110, hoveredSquare === "Level 8", level8GridState);
-    drawSquare(720, 240, "Level 9", 110, 110, hoveredSquare === "Level 9", level9GridState);
+    drawSquare(170, 160, "Level 7", 110, 110, hoveredSquare === "Level 7", level7GridState); 
+    drawSquare(430, 340, "Level 8", 110, 110, hoveredSquare === "Level 8", level8GridState);
+    drawSquare(640, 410, "Level 9", 110, 110, hoveredSquare === "Level 9", level9GridState);
 
     if (level7GridState && level8GridState && level9GridState) {
         displayCompletionMessage();
@@ -127,13 +127,13 @@ function drawGridOnSquare(x, y, width, gridState) {
 
 //update once works
 function mouseMoved() {
-    if (isInsideSquare(mouseX, mouseY, 170, 120, 110, 110)) {
+    if (isInsideSquare(mouseX, mouseY, 170, 160, 110, 110)) {
         hoveredSquare = "Level 7";
         cursor('pointer');
-    } else if (isInsideSquare(mouseX, mouseY, 450, 425, 110, 110)) {
+    } else if (isInsideSquare(mouseX, mouseY, 430, 340, 110, 110)) {
         hoveredSquare = "Level 8";
         cursor('pointer');
-    } else if (isInsideSquare(mouseX, mouseY, 720, 240, 110, 110)) {
+    } else if (isInsideSquare(mouseX, mouseY, 640, 410, 110, 110)) {
         hoveredSquare = "Level 9";
         cursor('pointer');
     } else {
@@ -145,13 +145,13 @@ function mouseMoved() {
 }
 
 function mousePressed() {
-    if (isInsideSquare(mouseX, mouseY, 170, 120, 110, 110)) {
+    if (isInsideSquare(mouseX, mouseY, 170, 160, 110, 110)) {
         window.location.href = "level7.html";
     }
-    else if (isInsideSquare(mouseX, mouseY, 450, 425, 110, 110)) {
+    else if (isInsideSquare(mouseX, mouseY, 430, 340, 110, 110)) {
         window.location.href = "level8.html";
     }
-    else if (isInsideSquare(mouseX, mouseY, 720, 240, 110, 110)) {
+    else if (isInsideSquare(mouseX, mouseY, 640, 410, 110, 110)) {
         window.location.href = "level9.html";
     }
 }

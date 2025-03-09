@@ -49,9 +49,9 @@ function draw() {
     image(img, 0, 0, cssWidth, cssHeight);
 
     //update square locations once works
-    drawSquare(170, 120, "Level 4", 110, 110, hoveredSquare === "Level 4", level4GridState); 
+    drawSquare(320, 280, "Level 4", 110, 110, hoveredSquare === "Level 4", level4GridState); 
     drawSquare(450, 425, "Level 5", 110, 110, hoveredSquare === "Level 5", level5GridState);
-    drawSquare(720, 240, "Level 6", 110, 110, hoveredSquare === "Level 6", level6GridState);
+    drawSquare(580, 740, "Level 6", 110, 110, hoveredSquare === "Level 6", level6GridState);
 
     if (level4GridState && level5GridState && level6GridState) {
         displayCompletionMessage();
@@ -127,13 +127,13 @@ function drawGridOnSquare(x, y, width, gridState) {
 
 //update once works
 function mouseMoved() {
-    if (isInsideSquare(mouseX, mouseY, 170, 120, 110, 110)) {
+    if (isInsideSquare(mouseX, mouseY, 320, 280, 110, 110)) {
         hoveredSquare = "Level 4";
         cursor('pointer');
     } else if (isInsideSquare(mouseX, mouseY, 450, 425, 110, 110)) {
         hoveredSquare = "Level 5";
         cursor('pointer');
-    } else if (isInsideSquare(mouseX, mouseY, 720, 240, 110, 110)) {
+    } else if (isInsideSquare(mouseX, mouseY, 580, 740, 110, 110)) {
         hoveredSquare = "Level 6";
         cursor('pointer');
     } else {
@@ -145,13 +145,13 @@ function mouseMoved() {
 }
 
 function mousePressed() {
-    if (isInsideSquare(mouseX, mouseY, 170, 120, 110, 110)) {
+    if (isInsideSquare(mouseX, mouseY, 320, 280, 110, 110)) {
         window.location.href = "level4.html";
     }
     else if (isInsideSquare(mouseX, mouseY, 450, 425, 110, 110)) {
         window.location.href = "level5.html";
     }
-    else if (isInsideSquare(mouseX, mouseY, 720, 240, 110, 110)) {
+    else if (isInsideSquare(mouseX, mouseY, 580, 740, 110, 110)) {
         window.location.href = "level6.html";
     }
 }
